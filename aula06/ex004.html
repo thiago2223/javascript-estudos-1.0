@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: rgb(255, 255, 255);
+        }
+        div{
+            background-color: rgb(237, 255, 179);
+            width: 50%;
+            height: 90px;
+            margin: auto;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        p{
+            background-color: rgb(230, 248, 171);
+            width: 75%;
+            margin: auto;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 20px; 
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Caracteristicas do nome:</h1>
+    </div>
+    <script>
+        var nome = String(window.prompt('Digite seu nome completo'))
+        document.write(`<p>Olá ${nome}! Seu nome tem ${nome.length} letras.</p>`)
+        document.write(`<br><p>Seu nome em maiúsculo fica assim: ${nome.toUpperCase()}</p>`)
+        document.write(`<br><p>Seu nome em minusculo é ${nome.toLowerCase}</p>`)
+        </script>
+
+<!--
+> var n1 = 1445.5
+undefined
+> n1
+1445.5
+> n1.tofixed(2)
+Uncaught TypeError: n1.tofixed is not a function
+> n1.toFixed(2).replace('.',',')
+'1445,50'
+> n1.tolocaleString
+undefined
+>  n1.tolocaleString('pt-BR', {style: 'currency': 'BRL'})
+ n1.tolocaleString('pt-BR', {style: 'currency': 'BRL'})
+                                              ^
+
+Uncaught SyntaxError: Unexpected token ':'
+>
+>  n1.tolocaleString('pt-BR', {style: 'currency': 'BRL'})
+ n1.tolocaleString('pt-BR', {style: 'currency': 'BRL'})
+                                              ^
+
+Uncaught SyntaxError: Unexpected token ':'
+> n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+'R$ 1.445,50'
+> n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+'R$ 1.445,50'
+>-->
+</body>
+</html>
