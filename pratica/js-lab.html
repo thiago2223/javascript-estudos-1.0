@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Mastery Lab - Edição Completa</title>
+    <style>
+        :root { --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; --accent: #fbbf24; --correct: #4ade80; --wrong: #f87171; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); display: flex; flex-direction: column; align-items: center; padding: 40px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 1000px; }
+        .room { background: var(--card); border-radius: 12px; padding: 20px; border-top: 4px solid var(--accent); }
+        .code-block { background: #000; padding: 12px; border-radius: 6px; font-family: 'Courier New', monospace; margin: 10px 0; font-size: 0.9rem; color: #6ee7b7; }
+        input { background: #0f172a; border: 1px solid #334155; color: white; padding: 8px; border-radius: 4px; width: 100%; box-sizing: border-box; margin-bottom: 10px; }
+        button { background: var(--accent); color: #000; border: none; padding: 10px; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%; }
+        .feedback { font-size: 0.85rem; margin-top: 8px; font-weight: 600; min-height: 1.2rem; }
+        .success { color: var(--correct); } .error { color: var(--wrong); }
+        h1 { color: var(--accent); margin-bottom: 5px; }
+        .category-tag { font-size: 0.7rem; background: #334155; padding: 3px 8px; border-radius: 10px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <h1>⚡ JS Full Stack Mastery</h1>
+    <p>Treina todos os conceitos das tuas capturas de ecrã abaixo.</p>
+
+    <div class="grid">
+        <div class="room">
+            <span class="category-tag">Dados</span>
+            <h3>O Alquimista</h3>
+            <p>Como converterias <code>'3.14'</code> para um número <strong>real (decimal)</strong>?</p>
+            <div class="code-block">let preco = _________('3.14');</div>
+            <input type="text" id="ans1" placeholder="Ex: parseInt">
+            <button onclick="check(1, 'parseFloat')">Verificar</button>
+            <div id="f1" class="feedback"></div>
+        </div>
+
+        <div class="room">
+            <span class="category-tag">Strings</span>
+            <h3>Manipulador de Texto</h3>
+            <p>Qual o comando para saber <strong>quantos caracteres</strong> tem a variável <code>nome</code>?</p>
+            <div class="code-block">nome._________</div>
+            <input type="text" id="ans2" placeholder="Propriedade...">
+            <button onclick="check(2, 'length')">Verificar</button>
+            <div id="f2" class="feedback"></div>
+        </div>
+
+        <div class="room">
+            <span class="category-tag">Aritmética</span>
+            <h3>O Calculador</h3>
+            <p>Qual o resultado de $10 \% 3$?</p>
+            <div class="code-block">10 % 3 = ?</div>
+            <input type="text" id="ans3" placeholder="Resto da divisão">
+            <button onclick="check(3, '1')">Verificar</button>
+            <div id="f3" class="feedback"></div>
+        </div>
+
+        <div class="room">
+            <span class="category-tag">Lógica</span>
+            <h3>O Guardião (Ternário)</h3>
+            <p>Como se escreve o "senão" no <strong>operador ternário</strong>?</p>
+            <div class="code-block">condicao ? 'Sim' ___ 'Não'</div>
+            <input type="text" id="ans4" placeholder="Símbolo">
+            <button onclick="check(4, ':')">Verificar</button>
+            <div id="f4" class="feedback"></div>
+        </div>
+
+        <div class="room">
+            <span class="category-tag">DOM</span>
+            <h3>O Seletor Moderno</h3>
+            <p>Qual comando seleciona um elemento via <strong>CSS selector</strong> (ex: '.classe')?</p>
+            <div class="code-block">document.________('.item')</div>
+            <input type="text" id="ans5" placeholder="Comando...">
+            <button onclick="check(5, 'querySelector')">Verificar</button>
+            <div id="f5" class="feedback"></div>
+        </div>
+
+        <div class="room">
+            <span class="category-tag">Eventos</span>
+            <h3>Interatividade</h3>
+            <p>Evento disparado quando o rato <strong>entra</strong> num elemento:</p>
+            <div class="code-block">area.on_________ = entrar;</div>
+            <input type="text" id="ans6" placeholder="Evento...">
+            <button onclick="check(6, 'mouseenter')">Verificar</button>
+            <div id="f6" class="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function check(id, correct) {
+            const input = document.getElementById('ans'+id).value.trim();
+            const f = document.getElementById('f'+id);
+            if(input === correct) {
+                f.innerHTML = "✅ Certíssimo! Dominado.";
+                f.className = "feedback success";
+            } else {
+                f.innerHTML = "❌ Quase! Revê as tuas notas.";
+                f.className = "feedback error";
+            }
+        }
+    </script>
+</body>
+</html>

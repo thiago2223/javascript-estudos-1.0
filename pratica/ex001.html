@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{
+            height: 500px;
+            width: 60%; 
+            margin: auto;
+            background-color: rgb(234, 252, 206);
+        }
+       div > p{
+            text-align: center;
+        }
+        input{
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+        div#input{
+            margin: 10px auto 10px auto;
+            width: 55%;
+            height: 10%;
+        }
+    </style>
+    <title>pratica</title>
+</head>
+<body>
+    <div>
+        <div id="input">
+            <input type="number" name="n1" id="n1">
+            <input type="number" name="n2" id="n2">
+            <input type="button" value="somar" onclick="somar()">
+        </div>
+        <p id="resultado">Resultado</p>
+    </div>
+    <script>
+       function somar() {
+            var n1 = document.querySelector('input#n1')
+            var n2 = document.querySelector('input#n2')
+            var resultado = document.querySelector('div#resultado')
+            var numero1 = Number(n1.value)
+            var numero2 = Number(n2.value)
+            var s = n1 + n2
+            resultado.innerHTML = `A soma de ${numero1} com ${numero2} é igual a ${s}`
+
+       }
+    </script>
+</body>
+</html>

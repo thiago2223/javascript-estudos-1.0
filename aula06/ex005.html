@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin: 0px;
+            background-color: rgb(49, 30, 0);
+            color: rgb(80, 78, 18);
+            font: normal 10pt Arial;
+        }
+        div{
+            width: 200px;
+            text-align: center;
+            margin: auto;
+            background-color: rgb(153, 157, 137);
+            border-radius: 10px;
+        }
+        div#seila{
+             display: grid;
+            place-items: center; 
+            height: 100vh;
+            width: 60%;
+            margin: 0px auto 0px auto;
+            background-color: rgb(95, 133, 90);
+            
+        }
+        header{
+            text-align: center;
+            background-image: linear-gradient(to bottom, rgb(30, 121, 185), rgb(4, 35, 57));
+            padding: 20px;
+        }
+        main{
+            padding: 30px;
+    width: 25%;
+    background-color: rgb(39, 30, 4);
+    display: grid;
+    place-items: center; 
+    height: 150px;   /* IMPORTANTE: O main precisa ter altura para centralizar na vertical */
+    border-radius: 15px;
+
+        }
+    </style>
+    <title>Primeiros passos com DOM</title>
+</head>
+<body>
+    <header>
+        <h1>Iniciando estudos com DOM</h1>
+        <p>Aqui vai o resultado:</p>
+        <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    </header>
+    <div id="seila">
+        <main>
+            <div id="msg">
+                Clique em min
+            </div>
+        </main>
+    </div>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[1] 
+        var d = window.document.querySelector('div#msg')
+        document.body.querySelector('div#msg').innerHTML = 'Login'
+        d.style.font = 'bold 30px Arial'
+        //var d = window.document.getElementById('msg')
+        //window.document.getElementById('msg').innerText = 'Olá'
+        //window.document.write(d.style.background = 'green')
+        //d.innerText = 'Estou aguardando'
+
+        //window.document.write('Está escrito assim: ' + p1.innerText)
+        //p1.style.color = 'blue'
+        //document.write(p1.innerHTML) 
+        //o innerhtml faz com que o js, puxe todo o html daquele elemento, que no caso é o p1
+    
+    </script>
+</body>
+</html>
