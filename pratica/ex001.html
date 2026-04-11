@@ -4,46 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        div{
-            height: 500px;
-            width: 60%; 
-            margin: auto;
-            background-color: rgb(234, 252, 206);
-        }
-       div > p{
-            text-align: center;
+        div#caixa-input{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background-color: rgba(108, 192, 220, 0.312);
+            width: 65%;
+            max-width: 500px;
+            min-height: 200px;
+            margin: 50px auto;
+            border-radius: 15px;
         }
         input{
-            margin-left: 30px;
-            margin-top: 10px;
+            margin: 10px;
         }
-        div#input{
-            margin: 10px auto 10px auto;
-            width: 55%;
-            height: 10%;
+        div{
+            background-color: rgb(167, 215, 143);
+        }
+        div#resultado{
+            margin: auto;
+            background-color: rgba(100, 198, 100, 0.37);
+        }
+        div#tudo{
+            background-color: white;
+        }
+        div#controles{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
     </style>
     <title>pratica</title>
 </head>
 <body>
-    <div>
-        <div id="input">
-            <input type="number" name="n1" id="n1">
-            <input type="number" name="n2" id="n2">
-            <input type="button" value="somar" onclick="somar()">
+    <div id="tudo">
+        <div id="caixa-input">
+            <div id="controles">
+                <input type="number" name="numberInput" id="numberInput"> <div>+</div>
+                <input type="number" name="numberInput2" id="numberInput2">
+                <input type="button" value="somar" onclick="somar()">
+            </div>
+                            <div id="resultado">
+                Resultado
+            </div>
         </div>
-        <p id="resultado">Resultado</p>
     </div>
     <script>
-       function somar() {
-            var n1 = document.querySelector('input#n1')
-            var n2 = document.querySelector('input#n2')
-            var resultado = document.querySelector('div#resultado')
-            var numero1 = Number(n1.value)
-            var numero2 = Number(n2.value)
-            var s = n1 + n2
-            resultado.innerHTML = `A soma de ${numero1} com ${numero2} é igual a ${s}`
-       }
+        function somar() {
+        var resultado = document.querySelector('div#resultado')
+        var numberInput2 = document.querySelector('input#numberInput2')
+        var numberinput = document.querySelector('input#numberInput')
+        var n1 = Number(numberinput.value)
+        var n2 = Number(numberInput2.value)
+        var soma = n1 + n2
+        resultado.innerHTML = `A soma entre ${n1} e ${n2} é igual a ${soma}!`            
+        }
     </script>
 </body>
 </html>
