@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAM</title>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    Velocidade do carro <input type="number" name="vel" id="vel">Km/h
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function verificar() {
+            var vel = document.getElementById('vel')
+            var res = document.getElementById('res')
+            var velocidade = Number(vel.value)
+            res.innerHTML = `<p>A velocidade do seu carro é ${velocidade}Km/h</p>`
+            if (velocidade > 60) {
+                res.innerHTML += `<p>Voce ultrapassou a velocidade permitida. MULTADO!</p>`
+            }
+            res.innerHTML += `<p>dirija sempre usando cinto de segurança</p>`
+        }
+        //mais igual ali porque eu quero adicionar não substituir o conteúdo do res, por isso usei o +=
+    </script>
+</body>
+</html>
