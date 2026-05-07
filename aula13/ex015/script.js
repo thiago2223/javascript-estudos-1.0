@@ -1,44 +1,44 @@
 function verificar() {
     var data = new Date()
-    var anoAtual = data.getFullYear()
-    var fano = document.getElementById('ano')
-    var res = document.getElementById('res')
+    var ano = data.getFullYear()
+    var fano = document.querySelector('input#ano')
+    var res = document.querySelector('div#res')
 
-    if (fano.value.length == 0 || Number(fano.value) > anoAtual) {
-        window.alert('[ERRO] Verifique os dados!')
+    // Correção: value.length e verificação de ano futuro
+    if (fano.value.length == 0 || Number(fano.value) > ano) {
+        window.alert('ERRO! Verifique os dados e tente novamente!')
     } else {
-        var fsex = document.getElementsByName('radsex')
-        var idade = anoAtual - Number(fano.value)
+        var fsex = document.getElementsByName('radsex') // Uso de getElementsByName
+        var idade = ano - Number(fano.value)
         var genero = ''
         var img = document.createElement('img')
         img.setAttribute('id', 'foto')
-
-        if (fsex[0].checked) { // MASCULINO
+        if (fsex[0].checked) {
             genero = 'Homem'
-            if (idade >= 0 && idade < 10) {
-                img.setAttribute('src', 'pexels-jonathanborba-18293329.jpg')
-            } else if (idade < 21) {
-                img.setAttribute('src', 'pexels-caleboquendo-7938623.jpg')
-            } else if (idade < 50) {
-                img.setAttribute('src', 'pexels-eric-moura-859101902-28439169.jpg')
-            } else {
+            if (idade >= 0 && idade < 13) {
+                // Criança
                 img.setAttribute('src', 'pexels-raymart-arnino-1948344-13790576.jpg')
+            } else if (idade < 21 && idade > 15) {
+                // Jovem
+                img.setAttribute('src', '')
+            } else if (idade < 50) {
+                // Adulto
+            } else {
+                // Idoso
             }
-        } else { // FEMININO
+        } else if (fsex[1].checked) { // CORREÇÃO: Adicionado o "if" aqui
             genero = 'Mulher'
             if (idade >= 0 && idade < 10) {
-                img.setAttribute('src', 'pexels-kema-12257911.jpg')
+                // Criança
             } else if (idade < 21) {
-                img.setAttribute('src', 'pexels-artempodrez-7048346.jpg')
+                // Jovem
             } else if (idade < 50) {
-                img.setAttribute('src', 'istockphoto-1592147563-2048x2048.jpg')
+                // Adulto
             } else {
-                img.setAttribute('src', 'istockphoto-1915382108-2048x2048.jpg')
+                // Idoso
             }
         }
-        
-        res.style.textAlign = 'center'
         res.innerHTML = `Detectamos ${genero} com ${idade} anos.`
-        res.appendChild(img)
+        res.appendChild(img)        
     }
 }
