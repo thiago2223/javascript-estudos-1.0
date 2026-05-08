@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Cadastro</h1>
+</header>
+<section>
+    <div id="dados">
+        <p>País de origem: <input type="text" name="pais" id="txtpais"></p>
+        <p>Nome: <input type="text" name="nome" id="txtnome"></p>
+        <p>Gênero: <input type="radio" name="genero" id="txtgenero" value="masculino">Masculino <input type="radio" name="genero" id="txtgenero" value="feminino">Feminino <input type="radio" name="genero" id="txtgenero" value="outro">Outro</p></p>
+        <p>Data de nascimento: <input type="date" name="data" id="datancm"></p>
+        <p>E-mail: <input type="text" name="email" id="txtemail"></p>
+        <p>Senha: <input type="password" name="senha" id="txtsenha"></p>
+        <p><input type="button" value="cadastrar" onclick="cadastrar()"></p>
+    </div>
+    <div id="res">
+        preencha os dados acima
+    </div>
+</section>
+<footer>
+    <p>&copy; DevThiagoCBM</p>
+</footer>
+<script src="ex01.js"></script>
+</body>
+</html>
