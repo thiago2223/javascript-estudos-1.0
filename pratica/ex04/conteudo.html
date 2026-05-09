@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
     <link rel="stylesheet" href="style.css">
+    <title>Calculadora</title>
 </head>
 <body>
     <header>
-        <h1>Vamos contar</h1>
+        <h1>Calculadora de soma</h1>
     </header>
     <section>
-        <div id="dados">
-            <p>Inicio: <input type="number" name="inicio" id="txtinicio"></p>
-            <p>Fim: <input type="number" name="fim" id="txtfim"></p>
-            <p>Passo: <input type="number" name="passo" id="txtpasso"></p>
-            <p><input type="button" value="Contar" onclick="contar()"></p>
+        <div id="inputs">
+            <p><input type="number" name="num1" id="txtnum1"> <span>+</span> <input type="number" name="num2" id="txtnum2"></p>
+            <p><input type="button" value="Calcular" onclick="somar()"> <input type="button" value="Limpar" onclick="limpar()"></p>
         </div>
         <div id="res">
-            digite os números acima...
+            <span>O resultado vai aparecer aqui</span>
         </div>
     </section>
     <footer>
