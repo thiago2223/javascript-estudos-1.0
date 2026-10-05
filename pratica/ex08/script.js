@@ -26,7 +26,7 @@ function adicionar() {
     } else {
         window.alert('Valor inválido ou ja cadastrado na lista.')
     }
-    num.value = ''
+    num.value = ""
     num.focus()
 }
 function finalizar() {
